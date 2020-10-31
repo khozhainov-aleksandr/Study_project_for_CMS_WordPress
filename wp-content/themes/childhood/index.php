@@ -504,8 +504,8 @@
             </div>
         </div>
 
+<!-- 
 <?php
-
 // SECTION: Хуки события (действия)
 // function hello_world($text, $name) {
 //   echo 'Hello My World' . ' => ' . $text . ' => ' . $name;
@@ -537,6 +537,7 @@ remove_filter('my_filter', 'my_filter_function', 15);
 
 echo apply_filters('my_filter', 'World');
 ?>
+-->
 
 <?php
   get_footer();

@@ -505,5 +505,39 @@
         </div>
 
 <?php
+
+// SECTION: Хуки события (действия)
+// function hello_world($text, $name) {
+//   echo 'Hello My World' . ' => ' . $text . ' => ' . $name;
+// }
+
+// 10 это очередь выполнения, чем меньше число, тем раньше оно выполниться.
+// 2 это сколько аргументов будет передано в функцию
+// add_action('my_hook', 'hello_world', 10, 2);
+
+// После 'my_hook' идут два аргумента которые передаются в функцию.
+// do_action('my_hook', 'dear_costumer', 'AleX')
+
+// SECTION: Фильтры
+function my_filter_function($str) {
+  // В отличии от события, в фильтрах всегда указываем return
+  return 'Hello' . ' ' . $str;
+}
+
+// Если 1 аргумент то не надо указывать количество аргументов.
+add_filter('my_filter', 'my_filter_function', 15);
+
+echo apply_filters('my_filter', 'World');
+
+// SECTION: Удаление фильтра
+// 1) 'название хука',
+// 2) 'название прикрепленной функции',
+// 3) 'приоритет, должен быть такой же как и в add_filter'
+remove_filter('my_filter', 'my_filter_function', 15);
+
+echo apply_filters('my_filter', 'World');
+?>
+
+<?php
   get_footer();
 ?>

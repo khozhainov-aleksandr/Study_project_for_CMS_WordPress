@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- Динамически подставляет название и описание сайта которое в вели через панель WP -->
+		<!-- Динамически подставляет название и описание сайта которое в вели через панель WP  -->
     <title><?php bloginfo('name'); echo ' | '; bloginfo('description'); ?></title>
         <meta name="theme-color" content="#c9e0e04d">
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -33,8 +33,9 @@
                     <div class="col-md-12 col-lg-9 offset-lg-0 col-xl-7 offset-xl-2 ">
                         <div class="header__contacts">
                             <div class="header__contacts-item">
-                                <img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/email.svg" alt="почта" class="header__contacts-logo">
-                                <a href="mailto:mirdetstva@gmail.com" class="header__contacts-mail">mirdetstva@gmail.com</a>
+																<img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/email.svg" alt="почта" class="header__contacts-logo">
+																<!-- Вторым значением указываем 2 это номер страницы id на которой расположено отображение этой почты -->
+                                <a href="<?php the_field('mail', 2); ?>" class="header__contacts-mail"><?php the_field('mail', 2); ?></a>
                             </div>
                             <div class="header__contacts-item">
                                 <img src="<?php echo bloginfo('template_url'); ?>/assets/img/icons/svg/phone.svg" alt="телефон" class="header__contacts-logo">
